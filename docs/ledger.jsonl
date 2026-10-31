@@ -1,0 +1,2 @@
+{"ts":"2026-10-31T05:20:00Z","event":"run_start","key":"sonnet55-unlock","phase":"phase-1-research-and-build"}
+{"ts":"2026-10-31T05:20:00Z","event":"dispatch","nodes":["harness-bisect","frame-probe","model-identity"],"handles":["HarnessBisect","FrameProbe","ModelIdentity"]}

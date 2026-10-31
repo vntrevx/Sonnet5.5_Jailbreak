@@ -1,0 +1,10 @@
+[Unit]
+Description=Run kirolb guard every 5 minutes and 30s after boot
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

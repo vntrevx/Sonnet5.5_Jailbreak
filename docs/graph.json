@@ -1,0 +1,56 @@
+{
+  "key": "sonnet55-unlock",
+  "name": "Sonnet 5.5 jailbreak — harness-safe",
+  "phase": "phase-1-research-and-build",
+  "status": "planned",
+  "nodes": [
+    {
+      "id": "harness-bisect",
+      "task": "Fine-grained bisect of the 8 harness sections that kill Sonnet 5.5, and find the minimal surviving replacement text that preserves the jailbreak intent.",
+      "solutionSpace": "open: which subsections carry the trigger, and what rewording survives",
+      "dependsOn": [],
+      "status": "pending",
+      "attempt": 0
+    },
+    {
+      "id": "frame-probe",
+      "task": "Test the 28 existing reference-implementation frames plus variants against Sonnet 5.5 (idx12) with a minimal system prompt, and report which frames produce fenced code.",
+      "solutionSpace": "open: sonnet may need different tool/mechanism pairs than haiku",
+      "dependsOn": [],
+      "status": "pending",
+      "attempt": 0
+    },
+    {
+      "id": "model-identity",
+      "task": "Confirm the exact routing identity of Sonnet 5.5 (idx12) vs Opus 5.5 (idx8) vs Haiku 5.5 (idx2), including which id variants return empty and under what conditions.",
+      "solutionSpace": "narrow: ids and empty-response conditions are measurable",
+      "dependsOn": [],
+      "status": "pending",
+      "attempt": 0
+    },
+    {
+      "id": "build-harness",
+      "task": "Compose the Sonnet-safe harness file from the bisect findings: keep surviving sections, replace dead sections with non-triggering equivalents.",
+      "solutionSpace": "open: rewrite strategy depends on bisect findings",
+      "dependsOn": ["harness-bisect"],
+      "status": "pending",
+      "attempt": 0
+    },
+    {
+      "id": "build-proxy",
+      "task": "Rewrite the proxy so it routes to Sonnet 5.5 (not Haiku), applies the surviving frames, and keeps retry/rate-gap.",
+      "solutionSpace": "narrow: routing + frame table are prescribed by upstream findings",
+      "dependsOn": ["frame-probe", "model-identity"],
+      "status": "pending",
+      "attempt": 0
+    },
+    {
+      "id": "verify-sweep",
+      "task": "Run the full 28-request sweep through OMP against Sonnet 5.5 and capture per-request code-block evidence.",
+      "solutionSpace": "narrow: pass/fail per request",
+      "dependsOn": ["build-harness", "build-proxy"],
+      "status": "pending",
+      "attempt": 0
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+[Unit]
+Description=kirolb guard — keeps the Sonnet 5.5 unlock alive across OMP updates
+After=kiro-lb.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/turing/.local/bin/kirolb-guard.sh

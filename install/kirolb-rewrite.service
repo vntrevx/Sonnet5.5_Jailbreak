@@ -1,0 +1,15 @@
+[Unit]
+Description=kiro-lb rewrite proxy (request translation for 5.5)
+After=kiro-lb.service
+Requires=kiro-lb.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/turing/.local/bin/kirolb-rewrite.py
+Restart=always
+RestartSec=2
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
